@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        
+            On-The-Fly Macros in Vim
+        
+    </title>
+    <meta 
+        name="description"
+        content="
+            A macro is a series of commands that you can record and play back. Vim provides a simple interface for creating and using macros that can automate all of you...
+        "
+    >
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://kylecoberly.com/blog/on-the-fly-macros-in-vim">
+    <link rel="alternate" type="application/rss+xml" title="Kyle Coberly" href="http://kylecoberly.com/feed.xml" />
+</head>
+
+    <body>
+        <div class="site-wrapper">
+            <header class="site-header">
+    <div>
+        <h1><a href="/">Kyle Coberly</a></h1>
+        <p>Web app developer, business dork, amateur economist</p>
+    </div>
+    <nav>
+        <ul>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+                <li
+                    
+                        class="active"
+                    
+                >
+                    <a href="/blog/">Blog</a>
+                </li>
+                
+            
+                
+                <li
+                    
+                >
+                    <a href="/portfolio/">Portfolio</a>
+                </li>
+                
+            
+                
+                <li
+                    
+                >
+                    <a href="/about-me/">About Me</a>
+                </li>
+                
+            
+        </ul>
+    </nav>
+    <ul class="social-links">
+        
+            <li>
+                <a href="http://www.github.com/kylecoberly" class="github-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="http://www.twitter.com/kylecoberly" class="twitter-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="http://www.linkedin.com/in/kylecoberly" class="linkedin-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="/feed.xml" class="rss-logo" target="_BLANK"></a>
+            </li>
+        
+    </ul>
+</header>
+
+            <div class="page-content">
+                <article class="blog-post">
+    <header>
+        <h2>On-The-Fly Macros in Vim</h2>
+        <time>July 18, 2015</time>
+    </header>
+    <main>
+        <p>A macro is a series of commands that you can record and play back. Vim provides a simple interface for creating and using macros that can automate all of your repetitive tasks.</p>
+
+<p>To record a macro in vim:</p>
+
+<ol>
+  <li>Go into normal mode</li>
+  <li>Press <code>q</code> and then any letter to start recording (your macro will be saved to this letter)</li>
+  <li>Enter the commands you want to record</li>
+  <li>Press <code>q</code> to stop recording</li>
+</ol>
+
+<p>To playback a macro in vim:</p>
+
+<ol>
+  <li>Go into normal mode</li>
+  <li>Enter the number of times you want to repeat the action</li>
+  <li>Press <code>@</code></li>
+  <li>Enter the letter that your macro was saved to</li>
+</ol>
+
+<p>That's it! The next time you find yourself wrapping things in quotes, adding spaces after separators, or converting something between formats, consider recording your actions as a macro.</p>
+
+<p>Some tips:</p>
+
+<ul>
+  <li>Macros can call other macros</li>
+  <li>Recording to a capital letter will let you append, rather than overwrite a macro</li>
+  <li>You can call <em>ex</em> commands from macros (eg. <code>:wnext</code>)</li>
+  <li>Be mindful of where your cursor starts and ends</li>
+  <li><code>@@</code> repeats your last playback</li>
+  <li>You can use <code>:nnoremap &lt;Space&gt; @q</code> to allow you to run the macro in <code>q</code> with spacebar in normal mode</li>
+  <li><code>:reg</code> will show you the contents of all your saved macros, while <code>:reg q</code> will show you the contents of the macro in <code>q</code></li>
+  <li>Macros are saved between vim sessions</li>
+  <li>You can save a macro in your .vimrc (to prevent overwriting or allow portability) by adding `let @<letter>='<commands>'</commands></letter></li>
+  <li>To edit the macro in <code>q</code>, type <code>:let @q='</code>, press <code>ctrl+r</code> <code>ctrl+r</code> <code>q</code>, edit your commands, then type <code>'</code> to close the expression</li>
+</ul>
+
+    </main>
+    <footer>
+        <address><a href="mailto:kyle.coberly@gmail.com">-Kyle Coberly</a></address>
+        <small>&copy;2015</small>
+    </footer>
+</article>
+
+            </div>
+        </div>
+        <footer>
+</footer>
+
+        <div class="shade">&nbsp;</div>
+    </body>
+    <script src="/js/off-canvas-menu.js"></script>
+</html>

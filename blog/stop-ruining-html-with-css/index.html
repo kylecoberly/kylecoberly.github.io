@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        
+            Stop Ruining Your HTML With Your CSS
+        
+    </title>
+    <meta 
+        name="description"
+        content="
+            Take a tour of the popular CSS style guides and several commonsense themes will emerge: Indent your code, don’t ignore semicolons, and don’t mix tabs and spa...
+        "
+    >
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://kylecoberly.com/blog/stop-ruining-html-with-css">
+    <link rel="alternate" type="application/rss+xml" title="Kyle Coberly" href="http://kylecoberly.com/feed.xml" />
+</head>
+
+    <body>
+        <div class="site-wrapper">
+            <header class="site-header">
+    <div>
+        <h1><a href="/">Kyle Coberly</a></h1>
+        <p>Web app developer, business dork, amateur economist</p>
+    </div>
+    <nav>
+        <ul>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+                <li
+                    
+                        class="active"
+                    
+                >
+                    <a href="/blog/">Blog</a>
+                </li>
+                
+            
+                
+                <li
+                    
+                >
+                    <a href="/portfolio/">Portfolio</a>
+                </li>
+                
+            
+                
+                <li
+                    
+                >
+                    <a href="/about-me/">About Me</a>
+                </li>
+                
+            
+        </ul>
+    </nav>
+    <ul class="social-links">
+        
+            <li>
+                <a href="http://www.github.com/kylecoberly" class="github-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="http://www.twitter.com/kylecoberly" class="twitter-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="http://www.linkedin.com/in/kylecoberly" class="linkedin-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="/feed.xml" class="rss-logo" target="_BLANK"></a>
+            </li>
+        
+    </ul>
+</header>
+
+            <div class="page-content">
+                <article class="blog-post">
+    <header>
+        <h2>Stop Ruining Your HTML With Your CSS</h2>
+        <time>July 07, 2015</time>
+    </header>
+    <main>
+        <p>Take a tour of the popular CSS style guides and several commonsense themes will emerge: Indent your code, don’t ignore semicolons, and don’t mix tabs and spaces. There is also likely to be a rampant celebration of the virtues of putting classes on everything and avoiding nested selectors. The reasons cited are usually poor selector performance (a <a href="http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/">mostly imaginary problem</a>), non-specific warnings about how complex specificity is (<a href="http://www.w3.org/TR/css3-selectors/#specificity">it isn’t</a>), and how nice it is to have a flat CSS hierarchy.</p>
+
+<p>I think this is a <em>terrible</em> trend, and so should you.</p>
+
+<h3 id="whatrsquos-wrong">What’s wrong?</h3>
+<p>Both the stylesheet and the document become mangled casualties in the quest for performant CSS. For example, take a look at this all-too-common markup:</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">class</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+
+    <span style="color:#070;font-weight:bold">&lt;header</span> <span style="color:#b48">class</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post-header</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+        <span style="color:#070;font-weight:bold">&lt;h1</span> <span style="color:#b48">class</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post-title</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>Stop Ruining HTML<span style="color:#070;font-weight:bold">&lt;/h1&gt;</span>
+        <span style="color:#070;font-weight:bold">&lt;p</span> <span style="color:#b48">class</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post-meta</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>By Kyle Coberly<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+    <span style="color:#070;font-weight:bold">&lt;/header&gt;</span>
+
+    <span style="color:#070;font-weight:bold">&lt;article</span> <span style="color:#b48">class</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post-content</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+        <span style="color:#070;font-weight:bold">&lt;p</span> <span style="color:#b48">class</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post-first-paragraph</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>First paragraph here.<span style="color:#070;font-weight:bold">&lt;/p&gt;</span> 
+        <span style="color:#070;font-weight:bold">&lt;p</span> <span style="color:#b48">class</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post-paragraph</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>More content here.<span style="color:#070;font-weight:bold">&lt;/p&gt;</span> 
+    <span style="color:#070;font-weight:bold">&lt;/article&gt;</span>
+
+<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>By taking out the completely redundant classes, we get a document that’s easier to read and more expressive:</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">class</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">post</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>
+    <span style="color:#070;font-weight:bold">&lt;header&gt;</span>
+        <span style="color:#070;font-weight:bold">&lt;h1&gt;</span>Stop Ruining HTML<span style="color:#070;font-weight:bold">&lt;/h1&gt;</span>
+        <span style="color:#070;font-weight:bold">&lt;p&gt;</span>By Kyle Coberly<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+    <span style="color:#070;font-weight:bold">&lt;/header&gt;</span>
+    <span style="color:#070;font-weight:bold">&lt;article&gt;</span>
+        <span style="color:#070;font-weight:bold">&lt;p&gt;</span>First paragraph here.<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+        <span style="color:#070;font-weight:bold">&lt;p&gt;</span>More content here.<span style="color:#070;font-weight:bold">&lt;/p&gt;</span>
+    <span style="color:#070;font-weight:bold">&lt;/article&gt;</span>
+<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>The so-called efficient stylesheet for this is flat, the hierarchy and semantics of the document are completely ignored, and six extra names have to be devised for elements that already have great names!</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#B06;font-weight:bold">.post</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#088">red</span>;
+}
+<span style="color:#B06;font-weight:bold">.post-header</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#088">blue</span>;
+}
+<span style="color:#B06;font-weight:bold">.post-title</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#088">yellow</span>;
+}
+<span style="color:#B06;font-weight:bold">.post-meta</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#088">green</span>;
+}
+<span style="color:#B06;font-weight:bold">.post-content</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#088">white</span>;
+}
+<span style="color:#B06;font-weight:bold">.post-first-paragraph</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#088">orange</span>;
+}
+<span style="color:#B06;font-weight:bold">.post-paragraph</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#088">purple</span>;
+}
+</pre></div>
+</div>
+</div>
+
+<p>By using a single class name and the nesting features of SCSS, we can make the stylesheet much more readable and reflective of the structure of the document:</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#B06;font-weight:bold">.post</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#088">red</span>;
+    <span style="color:#606">header</span> {
+        <span style="color:#606">background-color</span>: <span style="color:#088">blue</span>;
+        <span style="color:#606">h1</span> {
+            <span style="color:#606">background-color</span>: <span style="color:#088">yellow</span>;
+        }
+        <span style="color:#606">p</span> {
+            <span style="color:#606">background-color</span>: <span style="color:#088">green</span>;
+        }
+    }
+    <span style="color:#606">article</span> {
+        <span style="color:#606">background-color</span>: <span style="color:#088">white</span>;
+        <span style="color:#606">p</span> {
+            <span style="color:#606">background-color</span>: <span style="color:#088">orange</span>;
+            <span style="color:#F00;background-color:#FAA">&amp;</span>:<span style="color:#088">first</span> {
+                <span style="color:#606">background-color</span>: <span style="color:#088">purple</span>;
+            }
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+
+<p>The most expensive selector will render as <code>.post article p:first</code>, which has a whopping 12 points of specifity and will probably render in well under a millisecond on most devices.</p>
+
+<p>Another thing you’ll see in many traditional approaches to CSS are “display classes,” which intentionally couple the structure of the document to its presentation:</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#070;font-weight:bold">&lt;div</span> <span style="color:#b48">class</span>=<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">blue-border half-width</span><span style="color:#710">&quot;</span></span><span style="color:#070;font-weight:bold">&gt;</span>Content here<span style="color:#070;font-weight:bold">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</div>
+
+<p>Display classes supposedly help maintain a flatter structure, while simultaneously enabling reusability between applications. They’re also a bedrock principle for the popular CSS frameworks, such as Bootstrap and Foundation. The problem is that this approach mushes the responsibilities of the document and the stylesheet together, so they can’t develop independently and it’s rarely obvious which one is dictating any particular style. It also creates a maintenance nightmare (what if <code>blue-border</code> becomes <code>green-border</code>?), and a barrier to extensibility (is it also <code>half-width</code> on mobile? On a smart watch? On a TV?).</p>
+
+<p>In addition to the lack of readability, maintainability, and extensibility caused by traditional styling techniques, there are further “big picture” costs. Naming everything with classes encourages you to expend less effort selecting the correct HTML tags (when was the last time you used <code>&lt;figure&gt;</code>, <code>&lt;article&gt;</code> or <code>&lt;aside&gt;</code>?). Mixing document and styling concerns also encourages you to structure your document based on how you want it to look, rather than on how the information should be hierarchically organized. Having a poorly structured document impacts the accessibility of your site or app, thwarts all attempts at progressive enhancement, and makes your content more difficult for non-browser programs to use (think screen readers, syndicators, scrapers, and crawlers).</p>
+
+<h3 id="what-can-be-done">What can be done?</h3>
+
+<h4 id="use-scss"><strong>Use SCSS</strong></h4>
+
+<p><a href="http://sass-lang.com/">SCSS</a> is a superset of CSS, meaning that all valid CSS is also valid SCSS. It adds a bunch of features that make writing great stylesheets a snap.</p>
+
+<h4 id="nest-generously-tag-appropriately-and-use-classes-cautiously"><strong>Nest generously, tag appropriately, and use classes cautiously</strong></h4>
+
+<p>The greatest feature of SCSS is the ability to nest selectors. If you make good use of nesting and semantic HTML5 tags, you can get away with creating only those classes which uniquely describe your site or application. Check out the SCSS example from above for an example.</p>
+
+<h4 id="use-variables-and-mixins"><strong>Use variables and mixins</strong></h4>
+
+<p>SCSS allows you to super-charge your style organization with variables and mixins. For example, you might have a <code>colors.scss</code> file that stores your application’s color pallette:</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#F00;background-color:#FAA">$</span><span style="color:#070;font-weight:bold">dark-grey</span>: <span style="color:#0A0">hsl(0,0,0.3)</span>;
+<span style="color:#F00;background-color:#FAA">$</span><span style="color:#070;font-weight:bold">primary-color</span>: <span style="color:#0A0">hsl(120, 50%, 50%)</span>;
+</pre></div>
+</div>
+</div>
+
+<p>You can then reference these variables throughout your stylesheets:</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#088;font-weight:bold">@import</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">colors</span><span style="color:#710">&quot;</span></span>;
+<span style="color:#070;font-weight:bold">body</span> {
+    <span style="color:#606">background-color</span>: <span style="color:#F00;background-color:#FAA">$</span><span style="color:#088">primary-color</span>;
+    <span style="color:#606">color</span>: <span style="color:#F00;background-color:#FAA">$</span><span style="color:#088">dark-grey</span>;
+}
+</pre></div>
+</div>
+</div>
+
+<p>For more complex styles you want to reuse, you can define a mixin. For example, you may have a <code>typography.scss</code> file:</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#088;font-weight:bold">@mixin</span> <span style="color:#070;font-weight:bold">header-type</span> {
+    <span style="color:#606">font-size</span>: <span style="color:#60E">8</span><span style="color:#088">rem</span>;
+    <span style="color:#606">font-family</span>: <span style="color:#088">Arial</span>, <span style="color:#088">sans-serif</span>;
+    <span style="color:#606">font-weight</span>: <span style="color:#60E">700</span>;
+    <span style="color:#606">letter-spacing</span>: <span style="color:#60E">-5px</span>;
+    <span style="color:#606">word-spacing</span>: <span style="color:#60E">15px</span>;
+}
+</pre></div>
+</div>
+</div>
+
+<p>You can then include the mixin wherever you want to use it. You can even override it!</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#088;font-weight:bold">@import</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">typography</span><span style="color:#710">&quot;</span></span>;
+<span style="color:#070;font-weight:bold">h1</span> {
+    <span style="color:#088;font-weight:bold">@include</span> <span style="color:#606">header-type</span>;
+    <span style="color:#606">font-size</span>: <span style="color:#60E">6</span><span style="color:#088">rem</span>;
+}
+</pre></div>
+</div>
+</div>
+
+<h4 id="one-file-per-view"><strong>One file per view</strong></h4>
+
+<p>With your application’s variables and mixins defined, you can use them to compose your views. I recommend using one file for each view in your application, and namespacing its contents.</p>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span style="color:#088;font-weight:bold">@import</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">colors</span><span style="color:#710">&quot;</span></span>;
+<span style="color:#088;font-weight:bold">@import</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">typography</span><span style="color:#710">&quot;</span></span>;
+<span style="color:#088;font-weight:bold">@import</span> <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">breakpoints</span><span style="color:#710">&quot;</span></span>;
+<span style="color:#B06;font-weight:bold">.about-me</span> {
+    <span style="color:#606">position</span>: <span style="color:#088">relative</span>;
+    <span style="color:#606">h2</span> {
+        <span style="color:#088;font-weight:bold">@include</span> <span style="color:#606">header-type</span>;
+    }
+    <span style="color:#606">img</span> {
+        <span style="color:#606">box-shadow</span>: <span style="color:#60E">2px</span> <span style="color:#60E">2px</span> <span style="color:#60E">1px</span> <span style="color:#F00;background-color:#FAA">$</span><span style="color:#088">dark-grey</span>;
+        <span style="color:#606">text-align</span>: <span style="color:#088">center</span>;
+        <span style="color:#088;font-weight:bold">@media</span> (<span style="color:#606">max-width</span>: <span style="color:#F00;background-color:#FAA">$</span><span style="color:#088">small-breakpoint</span>){
+            <span style="color:#606">width</span>: <span style="color:#60E">100%</span>;
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+
+<p>Now your documents and styles are independent, your HTML is semantically organized with a minimum amount of markup, and your stylesheets are declarative, simple, modular and extensible. You get accessibility, a sane way to address responsiveness, and maximum readability for free. There are performance-sensitive situations where a particular nested style may be a bottleneck; being on the bleeding edge of the web requires flexibility and compromise. That said, don’t ruin your code to solve problems you don’t have. Respect the separation of concerns, write just enough markup, and make your stylesheets as beautiful as the layouts they create.</p>
+
+<hr />
+
+<p>For more of my thoughts on CSS, check out my <a href="https://github.com/kylecoberly/css-style-guide">CSS Styleguide</a>.</p>
+
+    </main>
+    <footer>
+        <address><a href="mailto:kyle.coberly@gmail.com">-Kyle Coberly</a></address>
+        <small>&copy;2015</small>
+    </footer>
+</article>
+
+            </div>
+        </div>
+        <footer>
+</footer>
+
+        <div class="shade">&nbsp;</div>
+    </body>
+    <script src="/js/off-canvas-menu.js"></script>
+</html>
