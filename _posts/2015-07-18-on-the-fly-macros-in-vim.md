@@ -4,7 +4,7 @@ title:  "On-The-Fly Macros in Vim"
 date:   2015-07-18
 categories: vim, tutorials
 tags: vim, tutorials
-summary: On-the-fly macros are simple and one of the best vim time-savers you can learn.
+summary: On-the-fly macros are simple and one of the best vim timesavers you can learn.
 permalink: blog/on-the-fly-macros-in-vim
 ---
 

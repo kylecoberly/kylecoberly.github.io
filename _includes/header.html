@@ -5,7 +5,8 @@
     </div>
     <nav>
         <ul>
-            {% for link in site.pages %}
+            {% assign sorted_pages = site.pages | sort: "sort" %}
+            {% for link in sorted_pages %}
                 {% if link.title %}
                 <li
                     {% if page.url == link.url or page.url contains 'blog' and link.url contains 'blog' %}
