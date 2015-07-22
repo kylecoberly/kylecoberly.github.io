@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mv _site ..
+rm -rf *
+mv ../_site/* .
+rm ../_site

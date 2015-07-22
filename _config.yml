@@ -15,7 +15,7 @@ social-links:
     class: "twitter-logo"
   - url: "http://www.linkedin.com/in/kylecoberly"
     class: "linkedin-logo"
-  - url: ""
+  - url: "/feed.xml"
     class: "rss-logo"
 
 # Build settings
