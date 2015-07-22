@@ -1,0 +1,44 @@
+@import "colors";
+@import "typography";
+@import "breakpoints";
+
+body {
+    padding: 1rem;
+    position: relative;
+    height: 100vh;
+    @media (max-width: $small-breakpoint){
+        padding: 0;
+    }
+    main {
+        box-shadow: inset -40px -40px 120px 20px $white;
+        max-width: 600px;
+        @media (max-width: $small-breakpoint){
+            box-shadow: inset 0 -100px 50px -70px $white;
+        }
+    }
+}
+.page-content {
+    padding-top: 1rem;
+    margin-left: 2rem;
+    box-sizing: border-box;
+    @media (max-width: $small-breakpoint){
+        width: 100%;
+        margin-left: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+.site-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+}
+.index-image {
+    margin-left: -1rem;
+    max-width: calc(100% + 2rem);
+    position: relative;
+    z-index: -1;
+    @media (min-width: $small-breakpoint){
+        margin-left: 0;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body>
+        <div class="site-wrapper">
+            {% include header.html %}
+            <div class="page-content">
+                {{ content }}
+            </div>
+        </div>
+        {% include footer.html %}
+        <div class="shade">&nbsp;</div>
+    </body>
+    <script src="{{ '/js/off-canvas-menu.js' | prepend: site.baseurl }}"></script>
+</html>

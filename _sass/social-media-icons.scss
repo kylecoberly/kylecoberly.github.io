@@ -1,0 +1,53 @@
+@import "colors";
+
+@font-face {
+    font-family: social-media;
+    src: url("../images/socicon.eot");
+    src: url("../images/socicon.eot?#iefix") format("embedded-opentype"),
+        url("../images/socicon.woff") format("woff"),
+        url("../images/socicon.ttf") format("truetype"),
+        url("../images/socicon.svg#icomoonregular") format("svg");
+}
+
+@media screen {
+    @font-face {
+        font-family: social-media;
+        src: url("../images/socicon.svg") format(svg);
+    }
+}
+
+.social-links {
+    margin-top: 2rem;
+    li {
+        display: inline-block;
+        transition: all 0.2s ease-in-out;
+        a {
+            font-family: social-media;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            color: $white;
+            padding: 10px;
+            font-size: 24px;
+            border-radius: 40px;
+            background-color: $dark-grey;
+            text-shadow: -1px -1px 1px $black;
+            box-shadow: 1px 1px 1px $black;
+        }
+        &:hover {
+            transform: scale(1.1, 1.1);
+        }
+
+        .twitter-logo:before {
+            content:'a';
+        }
+        .linkedin-logo:before {
+            content:'j';
+        }
+        .rss-logo:before {
+            content:',';
+        }
+        .github-logo:before {
+            content:'Q';
+        }
+    }
+}

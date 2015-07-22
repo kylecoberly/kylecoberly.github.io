@@ -1,0 +1,29 @@
+<header class="site-header">
+    <div>
+        <h1><a href="/">{{site.title}}</a></h1>
+        <p>{{site.description}}</p>
+    </div>
+    <nav>
+        <ul>
+            {% assign sorted_pages = site.pages | sort: "sort" %}
+            {% for link in sorted_pages %}
+                {% if link.title %}
+                <li
+                    {% if page.url == link.url or page.url contains 'blog' and link.url contains 'blog' %}
+                        class="active"
+                    {% endif %}
+                >
+                    <a href="{{link.url | prepend: site.baseurl | replace: 'index.html', ''}}">{{link.title}}</a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+    <ul class="social-links">
+        {% for link in site.social-links %}
+            <li>
+                <a href="{{link.url}}" class="{{link.class}}" target="_BLANK"></a>
+            </li>
+        {% endfor %}
+    </ul>
+</header>

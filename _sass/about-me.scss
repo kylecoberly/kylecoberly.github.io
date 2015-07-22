@@ -1,0 +1,46 @@
+@import "typography";
+@import "colors";
+@import "social-media-icons";
+
+.about-me {
+    position: relative;
+    max-width: 40rem;
+    h2 {
+        @include header-type;
+    }
+    ul {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        li {
+            &:not(:first-child) {
+                margin-top: 1rem;
+            }
+            p {
+                @include long-form-readable-type;
+            }
+        }
+    }
+    .portraits {
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    img {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        max-width: 250px;
+        box-shadow: 2px 2px 1px $dark-grey;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .social-links {
+        display: none;
+        li a {
+            font-size: 40px;
+        }
+        @media (max-width: $small-breakpoint){
+            display: block;
+            text-align: center;
+        }
+    }
+}

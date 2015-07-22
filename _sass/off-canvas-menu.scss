@@ -1,0 +1,93 @@
+@import "breakpoints";
+@import "colors";
+
+@media (max-width: $small-breakpoint){
+    .shade {
+        display:none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: $translucent-black;
+        z-index: 5;
+        top: 0;
+        left: 0;
+    }
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        &:before {
+            content: "\2261";
+            font-size: 85px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-right: 5px;
+            line-height: 70px;
+            z-index: 10;
+        }
+        z-index: 10;
+        ul {
+            display: none;
+            margin-top: 0;
+            margin-bottom: 0;
+            li {
+                position: relative;
+                background-color: $primary-color;
+                display: block;
+                transition: all 0.2s ease-in-out;
+                margin: 0;
+                padding: 0;
+                box-shadow: 1px 1px 1px $dark-grey;
+                a {
+                    display: inline-block;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 100%;
+                    padding: 2rem 1rem 2rem 4rem;
+                    @include navigation-type;
+                    text-decoration: none;
+                    color: $white;
+                }
+                &:not(:first-child) {
+                    margin-left: 0;
+                    border-top: 1px solid $white;
+                }
+                &:not(:last-child) {
+                    margin-right: 0;
+                }
+                &:nth-child(1) {
+                    transform: none;
+                    &:hover {
+                        transform: none;
+                    }
+                }
+                &:nth-child(2) {
+                    transform: none;
+                    &:hover {
+                        transform: none;
+                    }
+                }
+                &:nth-child(3) {
+                    transform: none;
+                    &:hover {
+                        transform: none;
+                    }
+                }
+                &:hover {
+                    transform: none;
+                    background-color: lighten($primary-color, 10%);
+                }
+                &.active {
+                    transform: none;
+                    background-color: lighten($primary-color, 10%);
+                }
+                &:after {
+                    content: "";
+                    height: 100%;
+                    width: 20px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
