@@ -19,7 +19,7 @@ social-links:
     class: "rss-logo"
 
 # Build settings
-destination: _build
+destination: _site
 timezone: America/Denver
 markdown: kramdown
 encoding: UTF-8
