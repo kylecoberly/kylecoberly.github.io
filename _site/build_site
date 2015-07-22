@@ -3,4 +3,4 @@
 mv _site ..
 rm -rf *
 mv ../_site/* .
-rmdir ../_site
+rm ../_site
