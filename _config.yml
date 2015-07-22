@@ -1,0 +1,31 @@
+# Site settings
+title: Kyle Coberly
+email: kyle.coberly@gmail.com
+name: Kyle Coberly
+description: Web app developer, business dork, amateur economist
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://kylecoberly.com" # the base hostname & protocol for your site
+twitter_username: kylecoberly
+github_username: kylecoberly
+year: 2015
+social-links:
+  - url: "http://www.github.com/kylecoberly"
+    class: "github-logo"
+  - url: "http://www.twitter.com/kylecoberly"
+    class: "twitter-logo"
+  - url: "http://www.linkedin.com/in/kylecoberly"
+    class: "linkedin-logo"
+  - url: ""
+    class: "rss-logo"
+
+# Build settings
+destination: _build
+timezone: America/Denver
+markdown: kramdown
+encoding: UTF-8
+kramdown:
+  input: GFM
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  use_coderay: true
+  coderay:
+    coderay_line_numbers: ""

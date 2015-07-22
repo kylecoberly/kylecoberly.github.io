@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kyle Coberly</title>
+    <description>Web app developer, business dork, amateur economist</description>
+    <link>http://kylecoberly.com/</link>
+    <atom:link href="http://kylecoberly.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 22 Jul 2015 00:22:28 -0600</pubDate>
+    <lastBuildDate>Wed, 22 Jul 2015 00:22:28 -0600</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>On-The-Fly Macros in Vim</title>
+        <description>&lt;p&gt;A macro is a series of commands that you can record and play back. Vim provides a simple interface for creating and using macros that can automate all of your repetitive tasks.&lt;/p&gt;
+
+&lt;p&gt;To record a macro in vim:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Go into normal mode&lt;/li&gt;
+  &lt;li&gt;Press &lt;code&gt;q&lt;/code&gt; and then any letter to start recording (your macro will be saved to this letter)&lt;/li&gt;
+  &lt;li&gt;Enter the commands you want to record&lt;/li&gt;
+  &lt;li&gt;Press &lt;code&gt;q&lt;/code&gt; to stop recording&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To playback a macro in vim:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Go into normal mode&lt;/li&gt;
+  &lt;li&gt;Enter the number of times you want to repeat the action&lt;/li&gt;
+  &lt;li&gt;Press &lt;code&gt;@&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Enter the letter that your macro was saved to&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That&#39;s it! The next time you find yourself wrapping things in quotes, adding spaces after separators, or converting something between formats, consider recording your actions as a macro.&lt;/p&gt;
+
+&lt;p&gt;Some tips:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Macros can call other macros&lt;/li&gt;
+  &lt;li&gt;Recording to a capital letter will let you append, rather than overwrite a macro&lt;/li&gt;
+  &lt;li&gt;You can call &lt;em&gt;ex&lt;/em&gt; commands from macros (eg. &lt;code&gt;:wnext&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Be mindful of where your cursor starts and ends&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;@@&lt;/code&gt; repeats your last playback&lt;/li&gt;
+  &lt;li&gt;You can use &lt;code&gt;:nnoremap &amp;lt;Space&amp;gt; @q&lt;/code&gt; to allow you to run the macro in &lt;code&gt;q&lt;/code&gt; with spacebar in normal mode&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;:reg&lt;/code&gt; will show you the contents of all your saved macros, while &lt;code&gt;:reg q&lt;/code&gt; will show you the contents of the macro in &lt;code&gt;q&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Macros are saved between vim sessions&lt;/li&gt;
+  &lt;li&gt;You can save a macro in your .vimrc (to prevent overwriting or allow portability) by adding `let @&lt;letter&gt;=&#39;&lt;commands&gt;&#39;&lt;/commands&gt;&lt;/letter&gt;&lt;/li&gt;
+  &lt;li&gt;To edit the macro in &lt;code&gt;q&lt;/code&gt;, type &lt;code&gt;:let @q=&#39;&lt;/code&gt;, press &lt;code&gt;ctrl+r&lt;/code&gt; &lt;code&gt;ctrl+r&lt;/code&gt; &lt;code&gt;q&lt;/code&gt;, edit your commands, then type &lt;code&gt;&#39;&lt;/code&gt; to close the expression&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 18 Jul 2015 00:00:00 -0600</pubDate>
+        <link>http://kylecoberly.com/blog/on-the-fly-macros-in-vim</link>
+        <guid isPermaLink="true">http://kylecoberly.com/blog/on-the-fly-macros-in-vim</guid>
+        
+        <category>vim,</category>
+        
+        <category>tutorials</category>
+        
+        
+        <category>vim,</category>
+        
+        <category>tutorials</category>
+        
+      </item>
+    
+      <item>
+        <title>Stop Ruining Your HTML With Your CSS</title>
+        <description>&lt;p&gt;Take a tour of the popular CSS style guides and several commonsense themes will emerge: Indent your code, don’t ignore semicolons, and don’t mix tabs and spaces. There is also likely to be a rampant celebration of the virtues of putting classes on everything and avoiding nested selectors. The reasons cited are usually poor selector performance (a &lt;a href=&quot;http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/&quot;&gt;mostly imaginary problem&lt;/a&gt;), non-specific warnings about how complex specificity is (&lt;a href=&quot;http://www.w3.org/TR/css3-selectors/#specificity&quot;&gt;it isn’t&lt;/a&gt;), and how nice it is to have a flat CSS hierarchy.&lt;/p&gt;
+
+&lt;p&gt;I think this is a &lt;em&gt;terrible&lt;/em&gt; trend, and so should you.&lt;/p&gt;
+
+&lt;h3 id=&quot;whatrsquos-wrong&quot;&gt;What’s wrong?&lt;/h3&gt;
+&lt;p&gt;Both the stylesheet and the document become mangled casualties in the quest for performant CSS. For example, take a look at this all-too-common markup:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&quot;color:#b48&quot;&gt;class&lt;/span&gt;=&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;post&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span style=&quot;color:#b48&quot;&gt;class&lt;/span&gt;=&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;post-header&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span style=&quot;color:#b48&quot;&gt;class&lt;/span&gt;=&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;post-title&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;gt;&lt;/span&gt;Stop Ruining HTML&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span style=&quot;color:#b48&quot;&gt;class&lt;/span&gt;=&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;post-meta&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;gt;&lt;/span&gt;By Kyle Coberly&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+
+    &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;article&lt;/span&gt; &lt;span style=&quot;color:#b48&quot;&gt;class&lt;/span&gt;=&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;post-content&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span style=&quot;color:#b48&quot;&gt;class&lt;/span&gt;=&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;post-first-paragraph&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;gt;&lt;/span&gt;First paragraph here.&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt; 
+        &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span style=&quot;color:#b48&quot;&gt;class&lt;/span&gt;=&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;post-paragraph&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;gt;&lt;/span&gt;More content here.&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt; 
+    &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+
+&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;By taking out the completely redundant classes, we get a document that’s easier to read and more expressive:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&quot;color:#b48&quot;&gt;class&lt;/span&gt;=&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;post&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;header&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Stop Ruining HTML&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;By Kyle Coberly&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+    &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;article&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;First paragraph here.&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;More content here.&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/article&amp;gt;&lt;/span&gt;
+&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The so-called efficient stylesheet for this is flat, the hierarchy and semantics of the document are completely ignored, and six extra names have to be devised for elements that already have great names!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#B06;font-weight:bold&quot;&gt;.post&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;red&lt;/span&gt;;
+}
+&lt;span style=&quot;color:#B06;font-weight:bold&quot;&gt;.post-header&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;blue&lt;/span&gt;;
+}
+&lt;span style=&quot;color:#B06;font-weight:bold&quot;&gt;.post-title&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;yellow&lt;/span&gt;;
+}
+&lt;span style=&quot;color:#B06;font-weight:bold&quot;&gt;.post-meta&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;green&lt;/span&gt;;
+}
+&lt;span style=&quot;color:#B06;font-weight:bold&quot;&gt;.post-content&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;white&lt;/span&gt;;
+}
+&lt;span style=&quot;color:#B06;font-weight:bold&quot;&gt;.post-first-paragraph&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;orange&lt;/span&gt;;
+}
+&lt;span style=&quot;color:#B06;font-weight:bold&quot;&gt;.post-paragraph&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;purple&lt;/span&gt;;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;By using a single class name and the nesting features of SCSS, we can make the stylesheet much more readable and reflective of the structure of the document:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#B06;font-weight:bold&quot;&gt;.post&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;red&lt;/span&gt;;
+    &lt;span style=&quot;color:#606&quot;&gt;header&lt;/span&gt; {
+        &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;blue&lt;/span&gt;;
+        &lt;span style=&quot;color:#606&quot;&gt;h1&lt;/span&gt; {
+            &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;yellow&lt;/span&gt;;
+        }
+        &lt;span style=&quot;color:#606&quot;&gt;p&lt;/span&gt; {
+            &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;green&lt;/span&gt;;
+        }
+    }
+    &lt;span style=&quot;color:#606&quot;&gt;article&lt;/span&gt; {
+        &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;white&lt;/span&gt;;
+        &lt;span style=&quot;color:#606&quot;&gt;p&lt;/span&gt; {
+            &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;orange&lt;/span&gt;;
+            &lt;span style=&quot;color:#F00;background-color:#FAA&quot;&gt;&amp;amp;&lt;/span&gt;:&lt;span style=&quot;color:#088&quot;&gt;first&lt;/span&gt; {
+                &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;purple&lt;/span&gt;;
+            }
+        }
+    }
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The most expensive selector will render as &lt;code&gt;.post article p:first&lt;/code&gt;, which has a whopping 12 points of specifity and will probably render in well under a millisecond on most devices.&lt;/p&gt;
+
+&lt;p&gt;Another thing you’ll see in many traditional approaches to CSS are “display classes,” which intentionally couple the structure of the document to its presentation:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span style=&quot;color:#b48&quot;&gt;class&lt;/span&gt;=&lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;blue-border half-width&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;gt;&lt;/span&gt;Content here&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Display classes supposedly help maintain a flatter structure, while simultaneously enabling reusability between applications. They’re also a bedrock principle for the popular CSS frameworks, such as Bootstrap and Foundation. The problem is that this approach mushes the responsibilities of the document and the stylesheet together, so they can’t develop independently and it’s rarely obvious which one is dictating any particular style. It also creates a maintenance nightmare (what if &lt;code&gt;blue-border&lt;/code&gt; becomes &lt;code&gt;green-border&lt;/code&gt;?), and a barrier to extensibility (is it also &lt;code&gt;half-width&lt;/code&gt; on mobile? On a smart watch? On a TV?).&lt;/p&gt;
+
+&lt;p&gt;In addition to the lack of readability, maintainability, and extensibility caused by traditional styling techniques, there are further “big picture” costs. Naming everything with classes encourages you to expend less effort selecting the correct HTML tags (when was the last time you used &lt;code&gt;&amp;lt;figure&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;aside&amp;gt;&lt;/code&gt;?). Mixing document and styling concerns also encourages you to structure your document based on how you want it to look, rather than on how the information should be hierarchically organized. Having a poorly structured document impacts the accessibility of your site or app, thwarts all attempts at progressive enhancement, and makes your content more difficult for non-browser programs to use (think screen readers, syndicators, scrapers, and crawlers).&lt;/p&gt;
+
+&lt;h3 id=&quot;what-can-be-done&quot;&gt;What can be done?&lt;/h3&gt;
+
+&lt;h4 id=&quot;use-scss&quot;&gt;&lt;strong&gt;Use SCSS&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://sass-lang.com/&quot;&gt;SCSS&lt;/a&gt; is a superset of CSS, meaning that all valid CSS is also valid SCSS. It adds a bunch of features that make writing great stylesheets a snap.&lt;/p&gt;
+
+&lt;h4 id=&quot;nest-generously-tag-appropriately-and-use-classes-cautiously&quot;&gt;&lt;strong&gt;Nest generously, tag appropriately, and use classes cautiously&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;The greatest feature of SCSS is the ability to nest selectors. If you make good use of nesting and semantic HTML5 tags, you can get away with creating only those classes which uniquely describe your site or application. Check out the SCSS example from above for an example.&lt;/p&gt;
+
+&lt;h4 id=&quot;use-variables-and-mixins&quot;&gt;&lt;strong&gt;Use variables and mixins&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;SCSS allows you to super-charge your style organization with variables and mixins. For example, you might have a &lt;code&gt;colors.scss&lt;/code&gt; file that stores your application’s color pallette:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#F00;background-color:#FAA&quot;&gt;$&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;dark-grey&lt;/span&gt;: &lt;span style=&quot;color:#0A0&quot;&gt;hsl(0,0,0.3)&lt;/span&gt;;
+&lt;span style=&quot;color:#F00;background-color:#FAA&quot;&gt;$&lt;/span&gt;&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;primary-color&lt;/span&gt;: &lt;span style=&quot;color:#0A0&quot;&gt;hsl(120, 50%, 50%)&lt;/span&gt;;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can then reference these variables throughout your stylesheets:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#088;font-weight:bold&quot;&gt;@import&lt;/span&gt; &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;colors&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;;
+&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;body&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;background-color&lt;/span&gt;: &lt;span style=&quot;color:#F00;background-color:#FAA&quot;&gt;$&lt;/span&gt;&lt;span style=&quot;color:#088&quot;&gt;primary-color&lt;/span&gt;;
+    &lt;span style=&quot;color:#606&quot;&gt;color&lt;/span&gt;: &lt;span style=&quot;color:#F00;background-color:#FAA&quot;&gt;$&lt;/span&gt;&lt;span style=&quot;color:#088&quot;&gt;dark-grey&lt;/span&gt;;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For more complex styles you want to reuse, you can define a mixin. For example, you may have a &lt;code&gt;typography.scss&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#088;font-weight:bold&quot;&gt;@mixin&lt;/span&gt; &lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;header-type&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;font-size&lt;/span&gt;: &lt;span style=&quot;color:#60E&quot;&gt;8&lt;/span&gt;&lt;span style=&quot;color:#088&quot;&gt;rem&lt;/span&gt;;
+    &lt;span style=&quot;color:#606&quot;&gt;font-family&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;Arial&lt;/span&gt;, &lt;span style=&quot;color:#088&quot;&gt;sans-serif&lt;/span&gt;;
+    &lt;span style=&quot;color:#606&quot;&gt;font-weight&lt;/span&gt;: &lt;span style=&quot;color:#60E&quot;&gt;700&lt;/span&gt;;
+    &lt;span style=&quot;color:#606&quot;&gt;letter-spacing&lt;/span&gt;: &lt;span style=&quot;color:#60E&quot;&gt;-5px&lt;/span&gt;;
+    &lt;span style=&quot;color:#606&quot;&gt;word-spacing&lt;/span&gt;: &lt;span style=&quot;color:#60E&quot;&gt;15px&lt;/span&gt;;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can then include the mixin wherever you want to use it. You can even override it!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#088;font-weight:bold&quot;&gt;@import&lt;/span&gt; &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;typography&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;;
+&lt;span style=&quot;color:#070;font-weight:bold&quot;&gt;h1&lt;/span&gt; {
+    &lt;span style=&quot;color:#088;font-weight:bold&quot;&gt;@include&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;header-type&lt;/span&gt;;
+    &lt;span style=&quot;color:#606&quot;&gt;font-size&lt;/span&gt;: &lt;span style=&quot;color:#60E&quot;&gt;6&lt;/span&gt;&lt;span style=&quot;color:#088&quot;&gt;rem&lt;/span&gt;;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;one-file-per-view&quot;&gt;&lt;strong&gt;One file per view&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;With your application’s variables and mixins defined, you can use them to compose your views. I recommend using one file for each view in your application, and namespacing its contents.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-coderay&quot;&gt;&lt;div class=&quot;CodeRay&quot;&gt;
+  &lt;div class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span style=&quot;color:#088;font-weight:bold&quot;&gt;@import&lt;/span&gt; &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;colors&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;;
+&lt;span style=&quot;color:#088;font-weight:bold&quot;&gt;@import&lt;/span&gt; &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;typography&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;;
+&lt;span style=&quot;color:#088;font-weight:bold&quot;&gt;@import&lt;/span&gt; &lt;span style=&quot;background-color:hsla(0,100%,50%,0.05)&quot;&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&quot;color:#D20&quot;&gt;breakpoints&lt;/span&gt;&lt;span style=&quot;color:#710&quot;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;;
+&lt;span style=&quot;color:#B06;font-weight:bold&quot;&gt;.about-me&lt;/span&gt; {
+    &lt;span style=&quot;color:#606&quot;&gt;position&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;relative&lt;/span&gt;;
+    &lt;span style=&quot;color:#606&quot;&gt;h2&lt;/span&gt; {
+        &lt;span style=&quot;color:#088;font-weight:bold&quot;&gt;@include&lt;/span&gt; &lt;span style=&quot;color:#606&quot;&gt;header-type&lt;/span&gt;;
+    }
+    &lt;span style=&quot;color:#606&quot;&gt;img&lt;/span&gt; {
+        &lt;span style=&quot;color:#606&quot;&gt;box-shadow&lt;/span&gt;: &lt;span style=&quot;color:#60E&quot;&gt;2px&lt;/span&gt; &lt;span style=&quot;color:#60E&quot;&gt;2px&lt;/span&gt; &lt;span style=&quot;color:#60E&quot;&gt;1px&lt;/span&gt; &lt;span style=&quot;color:#F00;background-color:#FAA&quot;&gt;$&lt;/span&gt;&lt;span style=&quot;color:#088&quot;&gt;dark-grey&lt;/span&gt;;
+        &lt;span style=&quot;color:#606&quot;&gt;text-align&lt;/span&gt;: &lt;span style=&quot;color:#088&quot;&gt;center&lt;/span&gt;;
+        &lt;span style=&quot;color:#088;font-weight:bold&quot;&gt;@media&lt;/span&gt; (&lt;span style=&quot;color:#606&quot;&gt;max-width&lt;/span&gt;: &lt;span style=&quot;color:#F00;background-color:#FAA&quot;&gt;$&lt;/span&gt;&lt;span style=&quot;color:#088&quot;&gt;small-breakpoint&lt;/span&gt;){
+            &lt;span style=&quot;color:#606&quot;&gt;width&lt;/span&gt;: &lt;span style=&quot;color:#60E&quot;&gt;100%&lt;/span&gt;;
+        }
+    }
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now your documents and styles are independent, your HTML is semantically organized with a minimum amount of markup, and your stylesheets are declarative, simple, modular and extensible. You get accessibility, a sane way to address responsiveness, and maximum readability for free. There are performance-sensitive situations where a particular nested style may be a bottleneck; being on the bleeding edge of the web requires flexibility and compromise. That said, don’t ruin your code to solve problems you don’t have. Respect the separation of concerns, write just enough markup, and make your stylesheets as beautiful as the layouts they create.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;For more of my thoughts on CSS, check out my &lt;a href=&quot;https://github.com/kylecoberly/css-style-guide&quot;&gt;CSS Styleguide&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 07 Jul 2015 00:00:00 -0600</pubDate>
+        <link>http://kylecoberly.com/blog/stop-ruining-html-with-css</link>
+        <guid isPermaLink="true">http://kylecoberly.com/blog/stop-ruining-html-with-css</guid>
+        
+        <category>HTML,</category>
+        
+        <category>CSS,</category>
+        
+        <category>opinion</category>
+        
+        
+        <category>development</category>
+        
+      </item>
+    
+  </channel>
+</rss>

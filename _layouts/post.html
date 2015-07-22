@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article class="blog-post">
+    <header>
+        <h2>{{page.title}}</h2>
+        <time>{{page.date | date: "%B %d, %Y"}}</time>
+    </header>
+    <main>
+        {{content}}
+    </main>
+    <footer>
+        <address><a href="mailto:{{site.email}}">-{{site.name}}</a></address>
+        <small>&copy;{{site.year}}</small>
+    </footer>
+</article>

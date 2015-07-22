@@ -1,0 +1,33 @@
+@import "typography";
+@import "colors";
+
+.portfolio {
+    position: relative;
+    max-width: 40rem;
+    h2 {
+        display: none;
+    }
+    h3 {
+        @include header-type;
+        font-size: 2.5rem;
+    }
+    .technologies-used {
+        @include metadata-type;
+        margin-bottom: 1rem;
+    }
+    ul {
+        li {
+            &:not(:first-child) {
+                margin-top: 3rem;
+            }
+            p {
+                @include long-form-readable-type;
+            }
+            img {
+                width: 100%;
+                box-shadow: 2px 2px 1px $dark-grey;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
