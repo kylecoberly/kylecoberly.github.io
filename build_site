@@ -4,4 +4,4 @@ mv _site ..
 rm -rf *
 mv ../_site/* .
 rmdir ../_site
-echo "www.kylecoberly.com" > CNAME
+echo "kylecoberly.com" > CNAME
