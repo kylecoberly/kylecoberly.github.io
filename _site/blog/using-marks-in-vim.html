@@ -97,7 +97,7 @@
 
 <h3 id="local-and-global-marks">Local and Global Marks</h3>
 
-<p>A local mark is specific to a particular file and is indicated by a lowercase letter, while global marks are universal across all of your files and use uppercase letters. That is, many files can have an <code class="highlighter-rouge">\</code>a<code class="highlighter-rouge"> mark, while </code>`A` points to a particular location in one particular file.</p>
+<p>A local mark is specific to a particular file and is indicated by a lowercase letter, while global marks are universal across all of your files and use uppercase letters. That is, many files can have an <code class="highlighter-rouge">`a</code> mark, while <code class="highlighter-rouge">`A</code> points to a particular location in one particular file.</p>
 
 <h3 id="viewing-marks">Viewing Marks</h3>
 
@@ -105,22 +105,22 @@
 
 <h3 id="setting-marks">Setting Marks</h3>
 
-<p>Set marks with <code class="highlighter-rouge">m</code> key in normal mode. To set a local mark of <code class="highlighter-rouge">a</code> where the cursor is, type <code class="highlighter-rouge">ma</code>. To jump to this location, type <code class="highlighter-rouge">\</code>a` anywhere in the file.</p>
+<p>Set marks with <code class="highlighter-rouge">m</code> key in normal mode. To set a local mark of <code class="highlighter-rouge">a</code> where the cursor is, type <code class="highlighter-rouge">ma</code>. To jump to this location, type <code class="highlighter-rouge">`a</code> anywhere in the file.</p>
 
 <h3 id="deleting-marks">Deleting Marks</h3>
 
-<p>You can delete marks with the <code class="highlighter-rouge">:delm</code> command. To delete marks <code class="highlighter-rouge">\</code>a<code class="highlighter-rouge">, </code>`e<code class="highlighter-rouge">, and </code>`G<code class="highlighter-rouge">, you would type </code>:delm aeG<code class="highlighter-rouge">. You can delete all local marks with </code>:delm!`.</p>
+<p>You can delete marks with the <code class="highlighter-rouge">:delm</code> command. To delete marks <code class="highlighter-rouge">`a</code>, <code class="highlighter-rouge">`e</code>, and <code class="highlighter-rouge">`G</code>, you would type <code class="highlighter-rouge">:delm aeG</code>. You can delete all local marks with <code class="highlighter-rouge">:delm!</code>.</p>
 
 <h3 id="some-tips">Some tips</h3>
 
 <ul>
-  <li>Marks are motions, so you can use them with actions. For example, <code class="highlighter-rouge">y\</code>w<code class="highlighter-rouge"> will copy everything between your current cursor location andthe </code>`w` mark.</li>
-  <li><code class="highlighter-rouge">\</code>`` will return you to the last place you jumped from</li>
-  <li><code class="highlighter-rouge">\</code>0` will return you to the last file you had open before you quit vim</li>
-  <li><code class="highlighter-rouge">'</code> will jump you to the first non-blank character on the same line as the mark</li>
-  <li>If set <code class="highlighter-rouge">\</code>V<code class="highlighter-rouge"> to the top of your </code>.vimrc<code class="highlighter-rouge"> file, you can jump to it from any file (saved between </code>vim` sessions by default)</li>
-  <li>You can cycle through local marks with <code class="highlighter-rouge">[\</code><code class="highlighter-rouge">/</code>]``</li>
-  <li><a name="plugin"></a>The <a href="https://github.com/kshenoy/vim-signature">kshenoy/vim-signature</a> plug-in will add visual indications of marks to your line numbers, as well as giving you the ability to delete marks with <code class="highlighter-rouge">dm[mark letter]</code>, assign the next available mark with <code class="highlighter-rouge">m</code>, and more</li>
+  <li>Marks are motions, so you can use them with actions. For example, <code class="highlighter-rouge">y`w</code> will copy everything between your current cursor location and the <code class="highlighter-rouge">`w</code> mark.</li>
+  <li><code class="highlighter-rouge">``</code> will return you to the last place you jumped from</li>
+  <li><code class="highlighter-rouge">`0</code> will return you to the last file you had open before you quit vim</li>
+  <li>Using <code class="highlighter-rouge">'</code> (single-quote) instead of <code class="highlighter-rouge">`</code> (backtick) will jump you to the first non-blank character on the same line as the mark</li>
+  <li>If set <code class="highlighter-rouge">`V</code> to the top of your <code class="highlighter-rouge">.vimrc</code> file, you can jump to it from any file (saved between <code class="highlighter-rouge">vim</code> sessions by default)</li>
+  <li>You can cycle through local marks with <code class="highlighter-rouge">[`</code> / <code class="highlighter-rouge">]`</code></li>
+  <li><a name="plugin"></a>The <a href="https://github.com/kshenoy/vim-signature">kshenoy/vim-signature</a> plug-in will add visual indications of marks to your line numbers, as well as giving you the ability to delete marks with <code class="highlighter-rouge">dm[mark letter]</code>, assign the next available mark with <code class="highlighter-rouge">m,</code>, and more</li>
 </ul>
 
     </main>
