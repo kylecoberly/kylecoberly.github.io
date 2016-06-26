@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# This is a janky hack to build the site because the code highlighter I wanted to use was broken
+# 1. Run `jekyll build` to compile the site on the dev branch
+# 2. Add and commit all changes to dev
+# 3. Git checkout the changes to _site into master with `git checkout dev _site`
+# 4. Git checkout this script to master with `git checkout dev build_site`
+# 5. Remove `build_site` script
+# 6. Commit and push master
+
 mv _site ..
 rm -rf *
 mv ../_site/* .
