@@ -5,9 +5,43 @@
     <description>Web app developer, business dork, amateur economist</description>
     <link>http://kylecoberly.com/</link>
     <atom:link href="http://kylecoberly.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Sep 2015 23:23:25 -0600</pubDate>
-    <lastBuildDate>Thu, 24 Sep 2015 23:23:25 -0600</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Sun, 26 Jun 2016 10:57:09 -0600</pubDate>
+    <lastBuildDate>Sun, 26 Jun 2016 10:57:09 -0600</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Using Marks In Vim</title>
+        <description>How to leverage the power of marks in vim</description>
+        <pubDate>Sun, 26 Jun 2016 00:00:00 -0600</pubDate>
+        <link>http://kylecoberly.com/blog/using-marks-in-vim</link>
+        <guid isPermaLink="true">http://kylecoberly.com/blog/using-marks-in-vim</guid>
+        
+        <category>vim,</category>
+        
+        <category>marks</category>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Developing on a Chromebook Pixel</title>
+        <description>The Chromebook Pixel is the best development computer available today.</description>
+        <pubDate>Sat, 28 Nov 2015 00:00:00 -0700</pubDate>
+        <link>http://kylecoberly.com/blog/developing-on-a-chromebook-pixel</link>
+        <guid isPermaLink="true">http://kylecoberly.com/blog/developing-on-a-chromebook-pixel</guid>
+        
+        <category>chromebook,</category>
+        
+        <category>pixel,</category>
+        
+        <category>tutorial</category>
+        
+        
+        <category>tutorial</category>
+        
+      </item>
     
       <item>
         <title>Lean Software Development</title>
@@ -23,7 +57,7 @@
         <category>lean</category>
         
         
-        <category>business</category>
+        <category>Business</category>
         
       </item>
     
@@ -41,7 +75,7 @@
         <category>education</category>
         
         
-        <category>education</category>
+        <category>Education</category>
         
       </item>
     
@@ -59,7 +93,7 @@
         <category>presentation</category>
         
         
-        <category>development</category>
+        <category>Development</category>
         
       </item>
     
@@ -79,7 +113,7 @@
         <category>presentation</category>
         
         
-        <category>development</category>
+        <category>Development</category>
         
       </item>
     
@@ -101,7 +135,7 @@
         <category>stacks</category>
         
         
-        <category>development</category>
+        <category>Development</category>
         
       </item>
     
@@ -121,7 +155,7 @@
         <category>modeling</category>
         
         
-        <category>development</category>
+        <category>Development</category>
         
       </item>
     
@@ -141,9 +175,9 @@
         <category>short</category>
         
         
-        <category>development,</category>
+        <category>Development,</category>
         
-        <category>presentations</category>
+        <category>Presentations</category>
         
       </item>
     
@@ -162,24 +196,6 @@
         <category>vim,</category>
         
         <category>tutorials</category>
-        
-      </item>
-    
-      <item>
-        <title>Stop Ruining Your HTML With Your CSS</title>
-        <description>Documents are about structure, stylesheets are about looks. Can we please start keeping them that way?</description>
-        <pubDate>Tue, 07 Jul 2015 00:00:00 -0600</pubDate>
-        <link>http://kylecoberly.com/blog/stop-ruining-html-with-css</link>
-        <guid isPermaLink="true">http://kylecoberly.com/blog/stop-ruining-html-with-css</guid>
-        
-        <category>HTML,</category>
-        
-        <category>CSS,</category>
-        
-        <category>opinion</category>
-        
-        
-        <category>development</category>
         
       </item>
     
