@@ -5,11 +5,11 @@
 # 2. Add and commit all changes to dev
 # 3. Git checkout the changes to _site into master with `git checkout dev _site`
 # 4. Git checkout this script to master with `git checkout dev build_site`
-# 5. Remove `build_site` script
-# 6. Commit and push master
+# 5. Run `./build_site`
+# 6. Remove `build_site` script
+# 7. Commit and push master
 
 mv _site ..
 rm -rf *
 mv ../_site/* .
 rmdir ../_site
-echo "kylecoberly.com" > CNAME
