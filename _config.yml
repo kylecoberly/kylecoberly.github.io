@@ -26,6 +26,9 @@ encoding: UTF-8
 kramdown:
   input: GFM
   smart_quotes: ["apos", "apos", "quot", "quot"]
-  use_coderay: true
-  coderay:
-    coderay_line_numbers: ""
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    line_numbers: false
+sass:
+  sass_dir: _sass
+  style: compressed

@@ -99,9 +99,9 @@
 
 <ol>
   <li>Go into normal mode</li>
-  <li>Press <code class="highlighter-rouge">q</code> and then any letter to start recording (your macro will be saved to this letter)</li>
+  <li>Press <code>q</code> and then any letter to start recording (your macro will be saved to this letter)</li>
   <li>Enter the commands you want to record</li>
-  <li>Press <code class="highlighter-rouge">q</code> to stop recording</li>
+  <li>Press <code>q</code> to stop recording</li>
 </ol>
 
 <p>To playback a macro in vim:</p>
@@ -109,7 +109,7 @@
 <ol>
   <li>Go into normal mode</li>
   <li>Enter the number of times you want to repeat the action</li>
-  <li>Press <code class="highlighter-rouge">@</code></li>
+  <li>Press <code>@</code></li>
   <li>Enter the letter that your macro was saved to</li>
 </ol>
 
@@ -120,14 +120,14 @@
 <ul>
   <li>Macros can call other macros</li>
   <li>Recording to a capital letter will let you append, rather than overwrite a macro</li>
-  <li>You can call <em>ex</em> commands from macros (eg. <code class="highlighter-rouge">:wnext</code>)</li>
+  <li>You can call <em>ex</em> commands from macros (eg. <code>:wnext</code>)</li>
   <li>Be mindful of where your cursor starts and ends</li>
-  <li><code class="highlighter-rouge">@@</code> repeats your last playback</li>
-  <li>You can use <code class="highlighter-rouge">:nnoremap &lt;Space&gt; @q</code> to allow you to run the macro in <code class="highlighter-rouge">q</code> with spacebar in normal mode</li>
-  <li><code class="highlighter-rouge">:reg</code> will show you the contents of all your saved macros, while <code class="highlighter-rouge">:reg q</code> will show you the contents of the macro in <code class="highlighter-rouge">q</code></li>
+  <li><code>@@</code> repeats your last playback</li>
+  <li>You can use <code>:nnoremap &lt;Space&gt; @q</code> to allow you to run the macro in <code>q</code> with spacebar in normal mode</li>
+  <li><code>:reg</code> will show you the contents of all your saved macros, while <code>:reg q</code> will show you the contents of the macro in <code>q</code></li>
   <li>Macros are saved between vim sessions</li>
   <li>You can save a macro in your .vimrc (to prevent overwriting or allow portability) by adding `let @<letter>='<commands>'</commands></letter></li>
-  <li>To edit the macro in <code class="highlighter-rouge">q</code>, type <code class="highlighter-rouge">:let @q='</code>, press <code class="highlighter-rouge">ctrl+r</code> <code class="highlighter-rouge">ctrl+r</code> <code class="highlighter-rouge">q</code>, edit your commands, then type <code class="highlighter-rouge">'</code> to close the expression</li>
+  <li>To edit the macro in <code>q</code>, type <code>:let @q='</code>, press <code>ctrl+r</code> <code>ctrl+r</code> <code>q</code>, edit your commands, then type <code>'</code> to close the expression</li>
 </ul>
 
     </main>
