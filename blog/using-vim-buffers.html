@@ -95,12 +95,16 @@
     <main>
         <p>Want to improve your ability to work with multiple files in Vim? Spending a lot of time searching through directories with Netrw or NERDtree? Become proficient with buffers and you’ll be leaving your GUI editor comrades in the dust.</p>
 
+<p><img src="/images/vim-buffers-3.png" alt="Vim buffers" /></p>
+
 <h3 id="what-are-buffers">What are buffers?</h3>
 <p>Think of buffers as tabs¹ in Sublime or Atom. When you open a file in Vim, its contents are read into a "buffer," which is the thing Vim is actually working on. When you run <code>:w</code>, the contents of the buffer are written back to the file. When you open a new file in Vim with <code>:e</code> or <code>:E</code>, the buffer you were just using doesn't close, even though you're not looking at it anymore. You can see all of your open buffers by running <code>:ls</code>.</p>
 
 <p>¹Vim has something called tabs too, but these are <a href="http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/"><em>not</em> similar to tabs in GUI applications</a>. A more accurate term for Vim tabs would probably be "layouts."</p>
 
 <h3 id="add-buffer-support-to-airline">Add buffer support to airline</h3>
+
+<p><img src="/images/vim-buffers-1.png" alt="Vim airline" /></p>
 
 <p>The first thing we can do to make working with buffers easier is to visualize them. Let's install the status bar plug-in <a href="https://www.github.com/vim-airline/vim-airline">Airline</a>. If you're using NeoBundle, you can do this by adding <code>NeoBundle 'vim-airline/vim-airline'</code> to your <code>.vimrc</code>.</p>
 
@@ -109,6 +113,8 @@
 <p>Now the names of your open buffers will show up across the top of your terminal, just like tabs!</p>
 
 <h3 id="ctrl-p">Ctrl-p</h3>
+
+<p><img src="/images/vim-buffers-2.png" alt="Vim Ctrl-p" /></p>
 
 <p>The second thing we can do to improve the buffer experience is to install the <a href="https://www.github.com/ctrlpvim/ctrlp.vim">Ctrl-P plug-in</a>. With NeoBundle, that's as easy as <code>NeoBundle 'ctrlpvim/ctrlp.vim'</code>.</p>
 
