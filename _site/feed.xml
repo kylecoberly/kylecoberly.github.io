@@ -5,9 +5,9 @@
     <description>Web app developer, business dork, amateur economist</description>
     <link>http://kylecoberly.com/</link>
     <atom:link href="http://kylecoberly.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Dec 2016 21:46:07 -0700</pubDate>
-    <lastBuildDate>Tue, 27 Dec 2016 21:46:07 -0700</lastBuildDate>
-    <generator>Jekyll v3.3.1</generator>
+    <pubDate>Sat, 07 Oct 2017 08:55:01 -0600</pubDate>
+    <lastBuildDate>Sat, 07 Oct 2017 08:55:01 -0600</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>Using Vim Buffers</title>
