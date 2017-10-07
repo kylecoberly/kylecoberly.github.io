@@ -1,0 +1,92 @@
+@import "colors";
+@import "typography";
+@import "breakpoints";
+@import "social-media-icons";
+
+.site-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    h1 {
+        @include main-header-type;
+        @media (max-width: $small-breakpoint){
+            @include mobile-main-header-type;
+        }
+        a {
+            text-decoration: none;
+            color: $black;
+        }
+    }
+    p {
+        @include metadata-type;
+    }
+    @media (max-width: $small-breakpoint){
+        .social-links {
+            display: none;
+        }
+    }
+}
+nav {
+    text-align: right;
+    ul {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        li {
+            position: relative;
+            background-color: $primary-color;
+            display: block;
+            transition: all 0.2s ease-in-out;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 1px 1px 1px $dark-grey;
+            $scale-up-10: scale(1.03, 1.03);
+            a {
+                display: inline-block;
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                padding: 0.8rem 1.6rem 0.5rem 1.6rem;
+                @include navigation-type;
+                text-decoration: none;
+                color: $white;
+            }
+            &:not(:first-child) {
+                margin-left: 0.5rem;
+            }
+            &:not(:last-child) {
+                margin-right: 0.5rem;
+            }
+            $slide-right: translateX(1.6rem); 
+            &:nth-child(1) {
+                transform: rotate(2deg);
+                &:hover {
+                    transform: rotate(1deg) $scale-up-10 $slide-right;
+                }
+            }
+            &:nth-child(2) {
+                transform: rotate(-2deg);
+                &:hover {
+                    transform: rotate(-1deg) $scale-up-10 $slide-right;
+                }
+            }
+            &:nth-child(3) {
+                transform: rotate(3deg);
+                &:hover {
+                    transform: rotate(2deg) $scale-up-10 $slide-right;
+                }
+            }
+            &:hover {
+                transform: scale(1.1, 1.1);
+            }
+            &.active {
+                transform: translateX(1.6rem);
+                background-color: lighten($primary-color, 10%);
+            }
+            &:after {
+                content: "";
+                height: 100%;
+                width: 20px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

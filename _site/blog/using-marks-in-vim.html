@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        
+            Using Marks In Vim
+        
+    </title>
+    <meta 
+        name="description"
+        content="
+            Vim's motion commands are very flexible and work well for general use. You can go to the beginning of a line, replace a word, or change a sentence. What abou...
+        "
+    >
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://kylecoberly.com/blog/using-marks-in-vim">
+    <link rel="alternate" type="application/rss+xml" title="Kyle Coberly" href="http://kylecoberly.com/feed.xml" />
+</head>
+
+    <body>
+        <div class="site-wrapper">
+            <header class="site-header">
+    <div>
+        <h1><a href="/">Kyle Coberly</a></h1>
+        <p>Web app developer, business dork, amateur economist</p>
+    </div>
+    <nav>
+        <ul>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+                <li
+                    
+                        class="active"
+                    
+                >
+                    <a href="/blog/">Blog</a>
+                </li>
+                
+            
+                
+                <li
+                    
+                >
+                    <a href="/portfolio/">Portfolio</a>
+                </li>
+                
+            
+                
+                <li
+                    
+                >
+                    <a href="/about-me/">About Me</a>
+                </li>
+                
+            
+        </ul>
+    </nav>
+    <ul class="social-links">
+        
+            <li>
+                <a href="http://www.github.com/kylecoberly" class="github-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="http://www.twitter.com/kylecoberly" class="twitter-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="http://www.linkedin.com/in/kylecoberly" class="linkedin-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="/feed.xml" class="rss-logo" target="_BLANK"></a>
+            </li>
+        
+    </ul>
+</header>
+
+            <div class="page-content">
+                <article class="blog-post">
+    <header>
+        <h2>Using Marks In Vim</h2>
+        <time>June 26, 2016</time>
+    </header>
+    <main>
+        <p>Vim's motion commands are very flexible and work well for general use. You can go to the beginning of a line, replace a word, or change a sentence. What about things that are semantically relevant to your files, like an important or buggy function definition, the point of entry for your application, or a stack you're trying to trace? For these, you can use marks (read as: "bookmarks"). These are "save points" in your files that you can set, jump between, and even use with commands.</p>
+
+<h3 id="local-and-global-marks">Local and Global Marks</h3>
+
+<p>A local mark is specific to a particular file and is indicated by a lowercase letter, while global marks are universal across all of your files and use uppercase letters. That is, many files can have an <code>`a</code> mark, while <code>`A</code> points to a particular location in one particular file.</p>
+
+<h3 id="viewing-marks">Viewing Marks</h3>
+
+<p>View a list of your current marks with <code>:marks</code>. Note that marks are invisible in <code>vim</code> without the use of a (<a href="#plugin">plug-in</a>).</p>
+
+<h3 id="setting-marks">Setting Marks</h3>
+
+<p>Set marks with <code>m</code> key in normal mode. To set a local mark of <code>a</code> where the cursor is, type <code>ma</code>. To jump to this location, type <code>`a</code> anywhere in the file.</p>
+
+<h3 id="deleting-marks">Deleting Marks</h3>
+
+<p>You can delete marks with the <code>:delm</code> command. To delete marks <code>`a</code>, <code>`e</code>, and <code>`G</code>, you would type <code>:delm aeG</code>. You can delete all local marks with <code>:delm!</code>.</p>
+
+<h3 id="some-tips">Some tips</h3>
+
+<ul>
+  <li>Marks are motions, so you can use them with actions. For example, <code>y`w</code> will copy everything between your current cursor location and the <code>`w</code> mark.</li>
+  <li><code>``</code> will return you to the last place you jumped from</li>
+  <li><code>`0</code> will return you to the last file you had open before you quit vim</li>
+  <li>Using <code>'</code> (single-quote) instead of <code>`</code> (backtick) will jump you to the first non-blank character on the same line as the mark</li>
+  <li>If set <code>`V</code> to the top of your <code>.vimrc</code> file, you can jump to it from any file (saved between <code>vim</code> sessions by default)</li>
+  <li>You can cycle through local marks with <code>[`</code> / <code>]`</code></li>
+  <li><a name="plugin"></a>The <a href="https://github.com/kshenoy/vim-signature">kshenoy/vim-signature</a> plug-in will add visual indications of marks to your line numbers, as well as giving you the ability to delete marks with <code>dm[mark letter]</code>, assign the next available mark with <code>m,</code>, and more</li>
+</ul>
+
+    </main>
+    <footer>
+        <address><a href="mailto:kyle.coberly@gmail.com">-Kyle Coberly</a></address>
+        <small>&copy;2015</small>
+    </footer>
+</article>
+
+            </div>
+        </div>
+        <footer>
+</footer>
+
+        <div class="shade">&nbsp;</div>
+    </body>
+    <script src="/js/off-canvas-menu.js"></script>
+</html>

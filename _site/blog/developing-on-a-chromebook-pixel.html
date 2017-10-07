@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        
+            Developing on a Chromebook Pixel
+        
+    </title>
+    <meta 
+        name="description"
+        content="
+            The Chromebook Pixel is the best computer for software development available today. This may come as a surprise if you've ready any of the multitude of blog ...
+        "
+    >
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://kylecoberly.com/blog/developing-on-a-chromebook-pixel">
+    <link rel="alternate" type="application/rss+xml" title="Kyle Coberly" href="http://kylecoberly.com/feed.xml" />
+</head>
+
+    <body>
+        <div class="site-wrapper">
+            <header class="site-header">
+    <div>
+        <h1><a href="/">Kyle Coberly</a></h1>
+        <p>Web app developer, business dork, amateur economist</p>
+    </div>
+    <nav>
+        <ul>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+                <li
+                    
+                        class="active"
+                    
+                >
+                    <a href="/blog/">Blog</a>
+                </li>
+                
+            
+                
+                <li
+                    
+                >
+                    <a href="/portfolio/">Portfolio</a>
+                </li>
+                
+            
+                
+                <li
+                    
+                >
+                    <a href="/about-me/">About Me</a>
+                </li>
+                
+            
+        </ul>
+    </nav>
+    <ul class="social-links">
+        
+            <li>
+                <a href="http://www.github.com/kylecoberly" class="github-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="http://www.twitter.com/kylecoberly" class="twitter-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="http://www.linkedin.com/in/kylecoberly" class="linkedin-logo" target="_BLANK"></a>
+            </li>
+        
+            <li>
+                <a href="/feed.xml" class="rss-logo" target="_BLANK"></a>
+            </li>
+        
+    </ul>
+</header>
+
+            <div class="page-content">
+                <article class="blog-post">
+    <header>
+        <h2>Developing on a Chromebook Pixel</h2>
+        <time>November 28, 2015</time>
+    </header>
+    <main>
+        <p>The Chromebook Pixel is the best computer for software development available today. This may come as a surprise if you've ready any of the multitude of blog posts talking about how absurd it is to pay even as much as $300 for a glorified browser when you could get a "real computer" for that much money. So-called tech journalists get especially incredulous when presented with the $1300 Chromebook Pixel- no one in their right mind could justify should a ridiculous purchase.</p>
+
+<h3 id="chromebook-pixel">Chromebook Pixel</h3>
+
+<dl>
+    <dt>Processor</dt>
+    <dd>Dual-Core i7-5500U 2.4GHz</dd>
+    <dt>Memory</dt>
+    <dd>16GB DDR3L-1600</dd>
+    <dt>Storage</dt>
+    <dd>64GB SSD</dd>
+    <dt>Display</dt>
+    <dd>13" 3:2 Touch Screen 239ppi</dd>
+    <dt>Connectivity</dt>
+    <dd>Dual USB-C, Dual USB-3, SD Card</dd>
+    <dt>Price</dt>
+    <dd>$1300</dd>
+</dl>
+
+<h3 id="macbook-pro">MacBook Pro</h3>
+
+<dl>
+    <dt>Processor</dt>
+    <dd>Quad-Core i7-4770HQ 2.2GHz</dd>
+    <dt>Memory</dt>
+    <dd>16GB DDR3L-1600</dd>
+    <dt>Storage</dt>
+    <dd>256GB SSD</dd>
+    <dt>Display</dt>
+    <dd>15" 16:10 220ppi</dd>
+    <dt>Connectivity</dt>
+    <dd>Dual Thunderbolt, Dual USB-3, HDMI</dd>
+    <dt>Price</dt>
+    <dd>$2500</dd>
+</dl>
+
+<p>So what does an extra $1200 get you, hardware-wise? A bonus 2 slower cores, a bunch of extra local storage (in 2015??), a slightly larger screen with a less vertical, lower resolution, and no touch, and a pair of slower, proprietary connections. It's also about a pound heavier. I'll pass.</p>
+
+<p>What about the software? Not enough credit is given to <a href="https://github.com/dnschneid/crouton">Crouton</a>, a flexible, extremely powerful way to access to the underlying Linux kernel of ChromeOS. Think of it as Ubuntu in a Chrome tab, and much more.</p>
+
+<p>To install Crouton:</p>
+<ol>
+  <li>Put your Chromebook in Developer Mode by pressing <code>ESC</code> + <code>Refresh</code> + <code>Power</code>. Note that this will wipe the computer.</li>
+  <li>Press <code>Control</code>+<code>D</code> during boot to start the computer. You will need to do this every time you boot.</li>
+  <li>Download <a href="https://goo.gl/fd3zc">Crouton</a>.</li>
+  <li>Press <code>Control</code>+<code>Alt</code>+<code>T</code> to start a new ChromeOS shell- this is a limited-purpose shell with a handful of commands.</li>
+  <li>Type <code>shell</code> to enter the actual shell for the OS</li>
+  <li>The <code>sudo sh ~/Downloads/crouton</code> command will be the base command to install your new OS. Here are the flags you can pass:
+    <ul>
+      <li>-r [release-name]. This is the code name (eg. trusty) for any Ubuntu, Debian, or Kali release.</li>
+      <li>-n [name]. This is a nickname for your OS, in case you have want to have multiple installs.</li>
+      <li>-t [comma-separated list of options]. These are the features of the OS you want to install.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>This command installs Ubuntu 14.04 ("Trusty"), named "Kyle", with Chrome, Touch Support, Unity Desktop environment, and a tool for running GUI apps in the command line:</p>
+
+<p><code>sudo sh ~/Downloads/crouton -r trusty -n kyle -t chrome,trusty,unity,xiwi</code></p>
+
+<p>That's it! To launch your new OS:</p>
+
+<ol>
+  <li><code>Control</code>+<code>Alt</code>+<code>T</code> to open a new Chrosh shell</li>
+  <li><code>shell</code> to drop down to the real shell</li>
+  <li><code>sudo enter-chroot -n kyle</code> to enter your new OS</li>
+</ol>
+
+<p>If you want to launch into your new OS via a cool, GIMP-running, Atom-using, Steam-playing desktop manager:</p>
+
+<ol>
+  <li><code>Control</code>+<code>Alt</code>+<code>T</code> to open a new Chrosh shell</li>
+  <li><code>shell</code> to drop down to the real shell</li>
+  <li><code>sudo startunity -n kyle</code> to launch Unity</li>
+</ol>
+
+<p>The entire process should take about 15 minutes. When you're done, you'll have the ultimate laptop running the ultimate development environment at half the price of the popular alternative, with a host of extra features.</p>
+
+    </main>
+    <footer>
+        <address><a href="mailto:kyle.coberly@gmail.com">-Kyle Coberly</a></address>
+        <small>&copy;2015</small>
+    </footer>
+</article>
+
+            </div>
+        </div>
+        <footer>
+</footer>
+
+        <div class="shade">&nbsp;</div>
+    </body>
+    <script src="/js/off-canvas-menu.js"></script>
+</html>

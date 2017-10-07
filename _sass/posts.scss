@@ -1,0 +1,89 @@
+@import "typography";
+@import "colors";
+
+.blog-post {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    @include long-form-readable-type;
+    header {
+        h2 {
+            @include header-type;
+        }
+        time {
+            @include metadata-type;
+            display: block;
+            margin-top: -0.3rem;
+        }
+    }
+    main {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        h3 {
+            @include header-type;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+        h4 {
+            @include metadata-type;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 1rem;
+            & + p {
+                margin-top: 0;
+            }
+        }
+        pre {
+            overflow-x: auto;
+        }
+        p {
+            line-height: 1.6em;
+            em {
+                @include long-form-readable-italic-type;
+            }
+            &:first-child::first-letter {
+                font-size: 2.9 * 1.5rem;
+                float: left;
+                line-height: 0.9;
+                margin-top: 0.8rem;
+                margin-right: 0.5rem;
+            }
+            &:first-of-type:first-line {
+                font-variant: small-caps;
+            }
+            & + p {
+                margin-top: 1.3rem;
+            }
+        }
+        ol, ul {
+            list-style-position: outside;
+            padding-left: 2rem;
+        }
+        ol {
+            list-style-type: decimal;
+        }
+        ul {
+            list-style-type: square;
+        }
+        code {
+            @include inline-coding-type;
+        }
+        hr {
+            margin-top: 3rem;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    footer {
+        display: none;
+    }
+    .highlighter-coderay {
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @include coding-type;
+    }
+}

@@ -1,0 +1,36 @@
+<p>A macro is a series of commands that you can record and play back. Vim provides a simple interface for creating and using macros that can automate all of your repetitive tasks.</p>
+
+<p>To record a macro in vim:</p>
+
+<ol>
+  <li>Go into normal mode</li>
+  <li>Press <code>q</code> and then any letter to start recording (your macro will be saved to this letter)</li>
+  <li>Enter the commands you want to record</li>
+  <li>Press <code>q</code> to stop recording</li>
+</ol>
+
+<p>To playback a macro in vim:</p>
+
+<ol>
+  <li>Go into normal mode</li>
+  <li>Enter the number of times you want to repeat the action</li>
+  <li>Press <code>@</code></li>
+  <li>Enter the letter that your macro was saved to</li>
+</ol>
+
+<p>That’s it! The next time you find yourself wrapping things in quotes, adding spaces after separators, or converting something between formats, consider recording your actions as a macro.</p>
+
+<p>Some tips:</p>
+
+<ul>
+  <li>Macros can call other macros</li>
+  <li>Recording to a capital letter will let you append, rather than overwrite a macro</li>
+  <li>You can call <em>ex</em> commands from macros (eg. <code>:wnext</code>)</li>
+  <li>Be mindful of where your cursor starts and ends</li>
+  <li><code>@@</code> repeats your last playback</li>
+  <li>You can use <code>:nnoremap &lt;Space&gt; @q</code> to allow you to run the macro in <code>q</code> with spacebar in normal mode</li>
+  <li><code>:reg</code> will show you the contents of all your saved macros, while <code>:reg q</code> will show you the contents of the macro in <code>q</code></li>
+  <li>Macros are saved between vim sessions</li>
+  <li>You can save a macro in your .vimrc (to prevent overwriting or allow portability) by adding `let @<letter>='<commands>'</commands></letter></li>
+  <li>To edit the macro in <code>q</code>, type <code>:let @q='</code>, press <code>ctrl+r</code> <code>ctrl+r</code> <code>q</code>, edit your commands, then type <code>'</code> to close the expression</li>
+</ul>
