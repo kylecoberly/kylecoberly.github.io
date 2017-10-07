@@ -2,12 +2,12 @@
 title: Kyle Coberly
 email: kyle.coberly@gmail.com
 name: Kyle Coberly
-description: Web app developer, business dork, amateur economist
+description: Educator, business dork, software developer
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://kylecoberly.com" # the base hostname & protocol for your site
+url: "https://kylecoberly.com" # the base hostname & protocol for your site
 twitter_username: kylecoberly
 github_username: kylecoberly
-year: 2015
+year: 2017
 social-links:
   - url: "http://www.github.com/kylecoberly"
     class: "github-logo"
