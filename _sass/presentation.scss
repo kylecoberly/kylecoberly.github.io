@@ -1,0 +1,75 @@
+@import "typography";
+@import "colors";
+
+.presentation {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    @include long-form-readable-type;
+    header {
+        h2 {
+            @include header-type;
+        }
+        time {
+            @include metadata-type;
+            display: block;
+            margin-top: -0.3rem;
+        }
+        address {
+            @include subheader-type;
+            display: block;
+            margin-top: -0.3rem;
+        }
+    }
+    main {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        p {
+            line-height: 1.6em;
+            em {
+                @include long-form-readable-italic-type;
+            }
+        }
+        ol, ul {
+            list-style-position: outside;
+            padding-left: 2rem;
+        }
+        ol {
+            list-style-type: decimal;
+        }
+        ul {
+            list-style-type: square;
+        }
+        hr {
+            margin-top: 3rem;
+        }
+        img, iframe {
+            width: 100%;
+        }
+        .slides {
+            @include slides-link-type;
+            display: block;
+        }
+        .video {
+            position: relative;
+            margin-top: 1rem;
+            iframe {
+                height: 350px;
+                width: 100%;
+            }
+        }
+        .pictures {
+            margin-top: 1rem;
+        }
+    }
+    footer {
+        display: none;
+    }
+    .highlighter-coderay {
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        @include coding-type;
+    }
+}

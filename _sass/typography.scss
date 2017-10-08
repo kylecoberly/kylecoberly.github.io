@@ -41,6 +41,12 @@
     font-weight: 300;
     font-style: italic;
 }
+@mixin slides-link-type {
+    font-size: 2rem;
+    font-family: Merriweather, Georgia, sans-serif;
+    font-weight: 300;
+    padding: 1rem 0;
+}
 @mixin long-form-readable-type {
     font-size: 1.5rem;
     font-family: Merriweather, Georgia, sans-serif;

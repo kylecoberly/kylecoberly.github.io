@@ -11,7 +11,7 @@ sort: 1
                 <a href="{{post.url | prepend: site.baseurl | replace:'index.html', ''}}">
                     <strong>{{post.title}}</strong>
                 </a>
-                <p class="date">{{ post.date | date: "%b %-d, %Y" }}</p>
+                <p class="date">{{post.date | date: "%b %-d, %Y"}}</p>
                 <p class="summary">{{post.summary}}</p>
             </li>
         {% endfor %}

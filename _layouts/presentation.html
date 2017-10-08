@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="presentation">
+    <header>
+        <h2>{{page.title}}</h2>
+        <address>{{page.venue}}</address>
+        <time>{{page.date | date: "%B %d, %Y"}}</time>
+    </header>
+    <main>
+        {{content}}
+        {% if page.slide-deck %}
+            <div class="slides">
+                <a class="slides" href="{{page.slide-deck}}" target="_BLANK">Slides</a>
+            </div>
+        {% endif %}
+        {% if page.video %}
+            <div class="video">
+                <iframe src="{{page.video}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        {% endif %}
+        {% if page.images %}
+            <div class="pictures">
+                {% for image in page.images %}
+                    <figure>
+                        <img src="{{site.base_url}}/images/{{image}}" alt="{{page.title}}" />
+                    </figure>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </main>
+</article>

@@ -74,6 +74,12 @@ nav {
                     transform: rotate(2deg) $scale-up-10 $slide-right;
                 }
             }
+            &:nth-child(4) {
+                transform: rotate(-3deg);
+                &:hover {
+                    transform: rotate(-2deg) $scale-up-10 $slide-right;
+                }
+            }
             &:hover {
                 transform: scale(1.1, 1.1);
             }

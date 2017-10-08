@@ -17,6 +17,9 @@ social-links:
     class: "linkedin-logo"
   - url: "/feed.xml"
     class: "rss-logo"
+collections:
+  presentations:
+    output: true
 
 # Build settings
 destination: _site

@@ -1,0 +1,20 @@
+---
+title: Speaking
+layout: default
+sort: 2
+---
+<section class="presentations">
+    <h2>Speaking</h2>
+    <ul>
+        {% assign sorted-presentations = (site.presentations | sort: 'date') | reverse %}
+        {% for presentation in sorted-presentations %}
+            <li>
+                <a href="{{presentation.url | prepend: site.baseurl | replace:'index.html', ''}}">
+                    <strong>{{presentation.title}}</strong>
+                </a>
+                <p class="date">{{presentation.venue}} - {{presentation.date | date: "%b %-d, %Y"}}</p>
+                <p class="summary">{{presentation.summary}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
