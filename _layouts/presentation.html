@@ -4,8 +4,7 @@ layout: default
 <article class="presentation">
     <header>
         <h2>{{page.title}}</h2>
-        <address>{{page.venue}}</address>
-        <time>{{page.date | date: "%B %d, %Y"}}</time>
+        <address>{{page.venue}} - <time>{{page.date | date: "%B %d, %Y"}}</time></address>
     </header>
     <main>
         {{content}}

@@ -1,6 +1,3 @@
-@import "typography";
-@import "colors";
-
 .presentation {
     max-width: 40rem;
     margin-left: auto;
@@ -10,13 +7,8 @@
         h2 {
             @include header-type;
         }
-        time {
-            @include metadata-type;
-            display: block;
-            margin-top: -0.3rem;
-        }
         address {
-            @include subheader-type;
+            @include metadata-type;
             display: block;
             margin-top: -0.3rem;
         }
@@ -40,9 +32,6 @@
         ul {
             list-style-type: square;
         }
-        hr {
-            margin-top: 3rem;
-        }
         img, iframe {
             width: 100%;
         }
@@ -61,15 +50,5 @@
         .pictures {
             margin-top: 1rem;
         }
-    }
-    footer {
-        display: none;
-    }
-    .highlighter-coderay {
-        overflow-x: auto;
-        overflow-y: hidden;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        @include coding-type;
     }
 }

@@ -12,8 +12,7 @@ sort: 2
                 <a href="{{presentation.url | prepend: site.baseurl | replace:'index.html', ''}}">
                     <strong>{{presentation.title}}</strong>
                 </a>
-                <p class="date">{{presentation.venue}} - {{presentation.date | date: "%b %-d, %Y"}}</p>
-                <p class="summary">{{presentation.summary}}</p>
+                <address>{{presentation.venue}} - <time>{{presentation.date | date: "%b %-d, %Y"}}</time></address>
             </li>
         {% endfor %}
     </ul>

@@ -8,9 +8,8 @@ video: https://www.youtube.com/embed/jcU7mUEmG5Q
 images:
   - pwas-are-the-future-1.jpeg
   - pwas-are-the-future-2.jpeg
-venue: TechCrunch Disrupt NYC 2017
+venue: TechCrunch Disrupt NYC
 slide-deck: http://slides.com/kylecoberly/pwas-are-the-future#/
-summary: "Progressive Web Apps are the future"
 permalink: speaking/progressive-web-apps-are-the-future
 ---
-<p>PWAs are the future</p>
+A talk for the TechCrunch Disrupt NYC conference where I talk about the history of the web, and how some of the new browser technologies take on the advantages of native app with few of their drawbacks.

@@ -5,3 +5,6 @@ $light-grey: hsl(0,0,90);
 $translucent-black: hsla(0,0,0,0.85);
 
 $primary-color: hsl(355, 80, 25);
+// Assumes primary-color is red
+$link: adjust-hue($primary-color, 239);
+$visited: adjust-hue($primary-color, 239 + 60);

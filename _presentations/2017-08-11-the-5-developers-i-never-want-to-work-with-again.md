@@ -6,8 +6,8 @@ categories: Development
 tags: teams, commentary
 images:
   - 5-developers.jpeg
-venue: Develop Denver 2017
+venue: Develop Denver
 slide-deck: http://slides.com/kylecoberly/the-5-developers-i-never-want-to-work-with-again#/
 permalink: speaking/the-5-developers-i-never-want-to-work-with-again
 ---
-<p>Challenging how we think of developers</p>
+A sardonic look at how we act as developers, how we think of developers, and why we need to change both them.

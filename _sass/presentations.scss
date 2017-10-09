@@ -1,6 +1,3 @@
-@import "typography";
-@import "colors";
-
 .presentations {
     position: relative;
     max-width: 40rem;
@@ -13,9 +10,9 @@
     ul {
         li {
             &:not(:first-child) {
-                margin-top: 3rem;
+                margin-top: 2rem;
             }
-            .date {
+            address {
                 @include metadata-type;
             }
             .summary {
@@ -25,8 +22,10 @@
             a {
                 @include subheader-type;
                 line-height: 1.2;
-                text-decoration: none;
-                color: $black;
+                color: $link;
+                &:visited {
+                    color: $visited;
+                }
             }
             img {
                 width: 100%;

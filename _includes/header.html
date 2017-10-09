@@ -12,6 +12,9 @@
                     {% if page.url == link.url or page.url contains 'blog' and link.url contains 'blog' %}
                         class="active"
                     {% endif %}
+                    {% if page.url == link.url or page.url contains 'speaking' and link.url contains 'speaking' %}
+                        class="active"
+                    {% endif %}
                 >
                     <a href="{{link.url | prepend: site.baseurl | replace: 'index.html', ''}}">{{link.title}}</a>
                 </li>

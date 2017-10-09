@@ -1,24 +1,30 @@
-@import "typography";
-@import "colors";
-@import "social-media-icons";
-
 .about-me {
     position: relative;
     max-width: 40rem;
+    @include long-form-readable-type;
     h2 {
         @include header-type;
     }
-    ul {
+    h3 {
         margin-top: 1rem;
-        margin-bottom: 2rem;
-        li {
-            &:not(:first-child) {
-                margin-top: 1rem;
-            }
-            p {
-                @include long-form-readable-type;
-            }
+        @include subheader-type;
+    }
+    p {
+        &:first-child {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
         }
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+    }
+    ul {
+        list-style-type: square;
+        list-style-position: outside;
+        padding-left: 2rem;
+    }
+    em {
+        font-style: italic;
     }
     .portraits {
         text-align: center;
@@ -29,7 +35,7 @@
         margin-left: 1rem;
         margin-right: 1rem;
         max-width: 250px;
-        box-shadow: 2px 2px 1px $dark-grey;
+        box-shadow: 1px 1px 1px $dark-grey;
         margin-bottom: 1rem;
         text-align: center;
     }

@@ -1,6 +1,3 @@
-@import "typography";
-@import "colors";
-
 .blog {
     position: relative;
     max-width: 40rem;
@@ -13,20 +10,21 @@
     ul {
         li {
             &:not(:first-child) {
-                margin-top: 3rem;
+                margin-top: 2rem;
             }
             .date {
                 @include metadata-type;
             }
             .summary {
-                margin-top: 1rem;
                 @include short-form-readable-type;
             }
             a {
                 @include subheader-type;
                 line-height: 1.2;
-                text-decoration: none;
-                color: $black;
+                color: $link;
+                &:visited {
+                    color: $visited;
+                }
             }
             img {
                 width: 100%;
