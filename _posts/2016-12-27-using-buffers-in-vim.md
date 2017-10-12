@@ -5,7 +5,7 @@ date:   2016-12-27
 categories: tutorial 
 tags: vim, productivity
 summary: Work with multiple files in Vim like a pro!
-permalink: blog/using-vim-buffers
+permalink: /blog/using-vim-buffers/
 ---
 
 Want to improve your ability to work with multiple files in Vim? Spending a lot of time searching through directories with Netrw or NERDtree? Become proficient with buffers and you&rsquo;ll be leaving your GUI editor comrades in the dust.

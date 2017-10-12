@@ -5,7 +5,7 @@ date:   2015-07-18
 categories: vim, tutorials
 tags: vim, tutorials
 summary: On-the-fly macros are simple and one of the best vim timesavers you can learn.
-permalink: blog/on-the-fly-macros-in-vim
+permalink: /blog/on-the-fly-macros-in-vim/
 ---
 
 A macro is a series of commands that you can record and play back. Vim provides a simple interface for creating and using macros that can automate all of your repetitive tasks.

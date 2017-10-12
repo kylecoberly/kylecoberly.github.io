@@ -8,6 +8,6 @@ images:
   - 5-developers.jpeg
 venue: Develop Denver
 slide-deck: http://slides.com/kylecoberly/the-5-developers-i-never-want-to-work-with-again#/
-permalink: speaking/the-5-developers-i-never-want-to-work-with-again
+permalink: /speaking/the-5-developers-i-never-want-to-work-with-again/
 ---
 A sardonic look at how we act as developers, how we think of developers, and why we need to change both them.

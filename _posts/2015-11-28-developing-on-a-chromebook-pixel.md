@@ -5,7 +5,7 @@ date:   2015-11-28
 categories: tutorial
 tags: chromebook, pixel, tutorial
 summary: The Chromebook Pixel is the best development computer available today.
-permalink: blog/developing-on-a-chromebook-pixel
+permalink: /blog/developing-on-a-chromebook-pixel/
 ---
 
 The Chromebook Pixel is the best computer for software development available today. This may come as a surprise if you've ready any of the multitude of blog posts talking about how absurd it is to pay even as much as $300 for a glorified browser when you could get a "real computer" for that much money. So-called tech journalists get especially incredulous when presented with the $1300 Chromebook Pixel- no one in their right mind could justify should a ridiculous purchase.

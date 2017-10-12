@@ -5,7 +5,7 @@ date:   2015-09-24
 categories: Business
 tags: business, development, lean
 summary: A summary of lean software principles
-permalink: blog/lean-software-development
+permalink: /blog/lean-software-development/
 ---
 
 Think big, act small, fail fast, learn rapidly. Lean may have its origin in the factory, but its principles are equally relevant to any kind of production, including software. Far from being something only marketing or management wonks need to know about, lean is for the whole organization. The primary tenets of lean are:

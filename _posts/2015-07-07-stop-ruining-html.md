@@ -5,7 +5,7 @@ date:   2015-07-07
 categories: Development
 tags: HTML, CSS, opinion
 summary: Documents are about structure, stylesheets are about looks. Can we please start keeping them that way?
-permalink: blog/stop-ruining-html-with-css
+permalink: /blog/stop-ruining-html-with-css/
 ---
 
 Take a tour of the popular CSS style guides and several commonsense themes will emerge: Indent your code, don&rsquo;t ignore semicolons, and don&rsquo;t mix tabs and spaces. There is also likely to be a rampant celebration of the virtues of putting classes on everything and avoiding nested selectors. The reasons cited are usually poor selector performance (a [mostly imaginary problem](http://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/)), non-specific warnings about how complex specificity is ([it isn&rsquo;t](http://www.w3.org/TR/css3-selectors/#specificity)), and how nice it is to have a flat CSS hierarchy. 

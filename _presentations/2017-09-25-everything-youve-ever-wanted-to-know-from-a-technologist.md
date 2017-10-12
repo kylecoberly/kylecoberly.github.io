@@ -8,7 +8,7 @@ video: https://youtube.com/embed/0MpitUHINg0
 images:
   - denver-startup-week-2017.jpg
 venue: Denver Startup Week
-permalink: speaking/everything-youve-wanted-to-know-from-a-technologist-but-were-too-shy-to-ask
+permalink: /speaking/everything-youve-wanted-to-know-from-a-technologist-but-were-too-shy-to-ask/
 ---
 A panel of local experts discuss the latest technology trends and take questions from the audience.
 

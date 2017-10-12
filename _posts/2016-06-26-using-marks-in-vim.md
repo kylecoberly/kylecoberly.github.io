@@ -5,7 +5,7 @@ date:   2016-06-26
 categories: Tutorial 
 tags: vim, marks
 summary: How to leverage the power of marks in vim
-permalink: blog/using-marks-in-vim
+permalink: /blog/using-marks-in-vim/
 ---
 
 Vim's motion commands are very flexible and work well for general use. You can go to the beginning of a line, replace a word, or change a sentence. What about things that are semantically relevant to your files, like an important or buggy function definition, the point of entry for your application, or a stack you're trying to trace? For these, you can use marks (read as: "bookmarks"). These are "save points" in your files that you can set, jump between, and even use with commands.

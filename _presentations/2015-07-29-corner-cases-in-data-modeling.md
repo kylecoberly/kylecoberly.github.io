@@ -9,7 +9,7 @@ images:
   - data-modeling-talk-2.jpeg
 venue: Denver Ember Meetup
 slide-deck: http://slides.com/kylecoberly/corner-cases-in-data-modeling
-permalink: speaking/corner-cases-in-data-modeling
+permalink: /speaking/corner-cases-in-data-modeling/
 ---
 A presentation on data modeling in Ember.js covering:
 
