@@ -4,6 +4,7 @@ title: "The 5 Developers I Never Want To Work With Again"
 date: 2017-08-11
 categories: Development
 tags: teams, commentary
+video: https://www.youtube.com/embed/jGecK5ihY7A
 images:
   - 5-developers.jpeg
 venue: Develop Denver
