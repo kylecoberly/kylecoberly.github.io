@@ -38,3 +38,13 @@ body {
         max-width: 100%;
     }
 }
+
+ul {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    list-style: circle;
+    li {
+        @include long-form-readable-type;
+        margin-bottom: 0.5rem;
+    }
+}
