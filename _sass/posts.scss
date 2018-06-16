@@ -72,6 +72,13 @@
         img {
             max-width: 100%;
         }
+        strong {
+            @include bold-type;
+        }
+        blockquote {
+            @include long-form-readable-italic-type;
+            margin: 1rem 0 1rem 3rem;
+        }
     }
     footer {
         display: none;
